@@ -1,42 +1,51 @@
-  export interface DefaultTheme extends Theme {
-      appBackground: string;
-      appColor: string;
-      appDefaultStroke: string;
-      appLogo: string;
-      appSkeletonFrom: string;
-      appSkeletonTo: string;
+// src/styles/theme.d.ts
+import 'styled-components';
 
-    button: {
-      alert: string;
-      alertColor: string;
-      alertHover: string;
-      disabled: string;
-      primary: string;
-      primaryColor: string;
-      primaryHover: string;
-    };
+// sua interface Theme
+export interface Theme {
+  appBackground: string;
+  appColor: string;
+  appDefaultStroke: string;
+  appLogo: string;
+  appSkeletonFrom: string;
+  appSkeletonTo: string;
 
-    card: {
-      alert: string;
-      background: string;
-      border: string;
-      success: string;
-      warning: string;
-    };
+  button: {
+    alert: string;
+    alertColor: string;
+    alertHover: string;
+    disabled: string;
+    primary: string;
+    primaryColor: string;
+    primaryHover: string;
+  };
 
-    textInput: {
-      active: string;
-      activeColor: string;
-      borderColor: string;
-      disabled: string;
-      disabledBorderColor: string;
-      disabledColor: string;
-      placeholderColor: string;
-    };
+  card: {
+    alert: string;
+    background: string;
+    border: string;
+    success: string;
+    warning: string;
+  };
 
-    typographies: {
-      error: string;
-      subtitle: string;
-      success: string;
-    };
-  }
+  textInput: {
+    active: string;
+    activeColor: string;
+    borderColor: string;
+    disabled: string;
+    disabledBorderColor: string;
+    disabledColor: string;
+    placeholderColor: string;
+  };
+
+  typographies: {
+    error: string;
+    subtitle: string;
+    success: string;
+  };
+}
+
+// sobrescrevendo o DefaultTheme com sua interface Theme
+declare module 'styled-components' {
+    export type DefaultTheme = Theme;
+}
